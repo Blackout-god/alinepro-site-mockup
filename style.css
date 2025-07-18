@@ -1,0 +1,102 @@
+/* Базовые стили */
+body {
+  background-color: #161616;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  min-height: 100vh;
+}
+
+/* Контейнер для мокапа */
+.mockup-container {
+  width: 100%;
+  max-width: 900px;
+}
+
+/* Корпус ноутбука (крышка) */
+.laptop-mockup {
+  position: relative;
+  background: #2e2e2e; /* Цвет Space Gray */
+  border-radius: 20px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.6), inset 0 0 0 1px rgba(255,255,255,0.1);
+  padding: 18px; /* Внутренний отступ для создания рамки */
+}
+
+/* Черная рамка вокруг экрана */
+.screen-bezel {
+  background: #000;
+  border-radius: 12px;
+  position: relative;
+}
+
+/* Экран с контентом */
+.laptop-screen {
+  width: 100%;
+  padding-top: 62.5%; /* Соотношение сторон 16:10 */
+  position: relative;
+  border-radius: 12px; /* Скругление углов самого экрана */
+  overflow: hidden;
+}
+
+.laptop-screen iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Новые стили для 'челки' (Notch) */
+.notch {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px; /* Ширина челки */
+  height: 28px; /* Высота челки */
+  background: #000;
+  border-radius: 0 0 14px 14px;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.camera {
+  width: 7px;
+  height: 7px;
+  background: #222;
+  border-radius: 50%;
+  border: 1px solid #3a3a3a;
+}
+/* Конец стилей для челки */
+
+
+/* Нижняя часть корпуса */
+.laptop-bottom {
+  position: relative;
+  margin: 0 auto;
+  top: -1px; /* Чтобы идеально прилегала к крышке */
+  width: 98%;
+  height: 10px;
+  background: #222;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  box-shadow: inset 0 -1px 0 rgba(255,255,255,0.1);
+}
+
+/* Выемка для открытия крышки */
+.laptop-bottom::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18%;
+  height: 6px;
+  background: #111;
+  border-radius: 0 0 8px 8px;
+}
